@@ -1,8 +1,23 @@
+import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const Navbar = () => {
+  const [scrolled, setScrolled] = useState(false);
+  const headerRef = useRef(null);
+
+  useEffect(() => {
+    const onScroll = () => {
+      setScrolled(window.scrollY >= 50);
+    };
+
+    // Run once to set initial state in case page loads scrolled
+    onScroll();
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
   return (
-    <header className="header" id="header">
+    <header ref={headerRef} className={`header ${scrolled ? 'scroll-header' : ''}`} id="header">
       <nav className="nav container">
         <Link to="/" className="nav__logo">
           Shop.
