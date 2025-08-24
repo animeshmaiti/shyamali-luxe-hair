@@ -5,7 +5,7 @@ import new3 from '@assets/new3.png';
 
 const New = () => {
   return (
-    <section class="new section" id="new">
+    <section className="new section" id="new">
       <h2 className="section__title">New Arrivals</h2>
       <div className="new__container container grid">
         <article className="new__card">
