@@ -7,6 +7,7 @@ import New from './pages/New';
 import Collection from './pages/Collection';
 import Products from './pages/Products';
 import PageNotFound from './pages/PageNotFound';
+import Footer from './components/Footer';
 
 function App() {
   const [count, setCount] = useState(0);
@@ -24,6 +25,7 @@ function App() {
           <Route path="*" element={<PageNotFound />} />
         </Routes>
       </main>
+      <Footer />
     </>
   );
 }
