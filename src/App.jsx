@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import './App.css';
 import Navbar from './components/Navbar';
 import { Route, Routes } from 'react-router-dom';
@@ -10,10 +9,9 @@ import PageNotFound from './pages/PageNotFound';
 import Footer from './components/Footer';
 
 function App() {
-  const [count, setCount] = useState(0);
 
   return (
-    <>
+    <div className='app-shell'>
       <Navbar />
       <main className="main">
         <Routes>
@@ -26,7 +24,7 @@ function App() {
         </Routes>
       </main>
       <Footer />
-    </>
+    </div>
   );
 }
 
