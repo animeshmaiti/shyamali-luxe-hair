@@ -1,11 +1,16 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, useMemo } from 'react';
 import { Link, useLocation, NavLink } from 'react-router-dom';
+
+const DARK_CLASS = 'dark-theme';
+const ICON_DARK = 'ri-moon-line';
+const ICON_LIGHT = 'ri-sun-line';
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const headerRef = useRef(null);
   const location = useLocation();
+  const [theme, setTheme] = useState(getInitialTheme);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY >= 50);
@@ -39,6 +44,28 @@ const Navbar = () => {
     return () => document.removeEventListener('keydown', onKeyDown);
   }, []);
   const handleNavClick = () => setIsOpen(false);
+
+  function getInitialTheme() {
+    const saved = localStorage.getItem('selected-theme');
+    if (saved === 'dark' || saved === 'light') return saved;
+    const prefersDark = window.matchMedia?.(
+      '(prefers-color-scheme: dark)'
+    )?.matches;
+    return prefersDark ? 'dark' : 'light';
+  }
+
+  const iconClass = useMemo(
+    () => (theme === 'dark' ? ICON_LIGHT : ICON_DARK),
+    [theme]
+  );
+  useEffect(() => {
+    document.body.classList.toggle(DARK_CLASS, theme === 'dark');
+    localStorage.setItem('selected-theme', theme);
+    localStorage.setItem('selected-icon', iconClass);
+  }, [theme, iconClass]);
+
+  const themeToggle = () => setTheme((t) => (t === 'dark' ? 'light' : 'dark'));
+
   return (
     <>
       <header
@@ -93,8 +120,12 @@ const Navbar = () => {
           </div>
 
           {/* Theme toggle */}
-          <button className="theme-btn" aria-label="Toggle theme">
-            <i className="ri-moon-line"></i>
+          <button
+            className="theme-btn"
+            aria-label="Toggle theme"
+            onClick={themeToggle}
+          >
+            <i className={`change-theme ${iconClass}`} id="theme-button"></i>
           </button>
         </nav>
       </header>
