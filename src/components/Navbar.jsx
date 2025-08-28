@@ -93,28 +93,52 @@ const Navbar = () => {
           <div className="nav__menu nav__menu--desktop">
             <ul className="nav__list">
               <li className="nav__item">
-                <Link to="/home" className="nav__link">
+                <NavLink
+                  to="/home"
+                  className={({ isActive }) =>
+                    `nav__link ${isActive ? 'nav__link--active' : ''}`
+                  }
+                  end
+                >
                   <i className="ri-home-line"></i>
                   <span>Home</span>
-                </Link>
+                </NavLink>
               </li>
               <li className="nav__item">
-                <Link to="/new" className="nav__link">
+                <NavLink
+                  to="/new"
+                  className={({ isActive }) =>
+                    `nav__link ${isActive ? 'nav__link--active' : ''}`
+                  }
+                  end
+                >
                   <i className="ri-price-tag-3-line"></i>
                   <span>New</span>
-                </Link>
+                </NavLink>
               </li>
               <li className="nav__item">
-                <Link to="/collection" className="nav__link">
+                <NavLink
+                  to="/collection"
+                  className={({ isActive }) =>
+                    `nav__link ${isActive ? 'nav__link--active' : ''}`
+                  }
+                  end
+                >
                   <i className="ri-compass-line"></i>
                   <span>Collection</span>
-                </Link>
+                </NavLink>
               </li>
               <li className="nav__item">
-                <Link to="/products" className="nav__link">
+                <NavLink
+                  to="/products"
+                  className={({ isActive }) =>
+                    `nav__link ${isActive ? 'nav__link--active' : ''}`
+                  }
+                  end
+                >
                   <i className="ri-t-shirt-line"></i>
                   <span>Products</span>
-                </Link>
+                </NavLink>
               </li>
             </ul>
           </div>
