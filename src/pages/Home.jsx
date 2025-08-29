@@ -2,8 +2,13 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import home1 from '@assets/home1.png';
 import home2 from '@assets/home2.png';
+import { useRevealOnRoute } from '../hook/useRevealOnRoute';
 
 const Home = () => {
+  useRevealOnRoute((sr) => {
+    sr.reveal('.home__data');
+    sr.reveal('.home__images',{delay: 600,origin: 'bottom'})
+  });
   return (
     <section className="home section" id="home">
       <div className="home__container container grid">

@@ -9,7 +9,6 @@ import PageNotFound from './pages/PageNotFound';
 import Footer from './components/Footer';
 
 function App() {
-
   return (
     <div className='app-shell'>
       <Navbar />

@@ -1,6 +1,9 @@
-import React from 'react';
+import { useRevealOnRoute } from '../hook/useRevealOnRoute';
 
 const Footer = () => {
+  useRevealOnRoute((sr) => {
+    sr.reveal('.footer__container, .footer__info');
+  });
   return (
     <footer className="footer section">
       <div className="footer__container container grid">

@@ -7,8 +7,12 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
+import { useRevealOnRoute } from '../hook/useRevealOnRoute';
 
 const Products = () => {
+  useRevealOnRoute((sr) => {
+    sr.reveal('.products__container');
+  });
   return (
     <section className="products section" id="products">
       <h2 className="section__title">Products Page</h2>
