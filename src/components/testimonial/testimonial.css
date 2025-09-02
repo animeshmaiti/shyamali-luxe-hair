@@ -1,0 +1,130 @@
+/* Section shell fits inside Home without overlapping images */
+.testimonial.section {
+    padding: 48px 10px 24px;
+    background: transparent;
+    /* inherit Home background */
+}
+
+/* Heading */
+.testimonial__heading {
+    font-size: 28px;
+    font-weight: 700;
+    margin: 0 0 24px;
+    color: var(--text-color, #fafafa);
+    text-align: center;
+}
+
+/* Give space for bullets so they don’t overlap Home content */
+.testimonial__swiper {
+    padding: 4px 0 40px;;
+    width: 100%;
+}
+
+/* Card */
+.card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    text-align: left;
+    padding: 22px;
+    border-radius: 16px;
+    background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02)),
+        rgba(40, 40, 40, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.25);
+    transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+    backdrop-filter: blur(6px);
+    color: #eaeaea;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+    border-color: rgba(255, 255, 255, 0.16);
+}
+
+.card__quote {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.card__footer {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: auto;
+}
+
+.card__avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid rgba(255, 255, 255, 0.18);
+}
+
+.card__name {
+    font-weight: 600;
+    color: #fff;
+    font-size: 15px;
+}
+
+.card__role {
+    font-size: 13px;
+    color: #cfcfcf;
+}
+
+/* Stars */
+.stars {
+    display: flex;
+    gap: 4px;
+    margin-top: -2px;
+}
+
+.star {
+    font-size: 16px;
+    color: #777;
+}
+
+.star.filled {
+    color: #f7b500;
+}
+
+/* Pagination bullets scoped to testimonial */
+.testimonial__swiper .swiper-pagination-bullet {
+    width: 8px;
+    height: 8px;
+    background: #8b8b8b;
+    opacity: 0.6;
+}
+
+.testimonial__swiper .swiper-pagination-bullet-active {
+    width: 20px;
+    border-radius: 999px;
+    background: #fff;
+    opacity: 1;
+}
+
+/* Ensure slide height wraps content and works in Safari */
+.swiper-slide {
+    height: auto;
+    margin: 0;
+}
+
+/* optional: if total slides < slidesPerView, center them */
+/* .testimonial__swiper .swiper-wrapper {
+    justify-content: flex-start;
+}
+
+@media (max-width: 767px) {
+    .testimonial__swiper .swiper-wrapper {
+        justify-content: flex-start;
+    }
+} */
+
+/* if you want to center when fewer slides than view (optional) */
+/* .testimonial__swiper.few .swiper-wrapper {
+    justify-content: center;
+} */
