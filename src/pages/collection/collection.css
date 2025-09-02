@@ -1,0 +1,114 @@
+.collection {
+    background-color: var(--bg-color-light);
+    overflow: hidden;
+}
+
+.collection__container {
+    position: relative;
+    height: 571px;
+    display: grid;
+    justify-items: center;
+}
+
+.collection__title {
+    font-size: var(--h1-font-size);
+    margin-bottom: 0.75rem;
+}
+
+.collection__explore {
+    display: grid;
+    column-gap: 2rem;
+    position: absolute;
+}
+
+.collection__explore:nth-child(2) {
+    grid-template-columns: 210px max-content;
+    bottom: 1rem;
+    margin-right: 5rem;
+}
+
+.collection__explore:nth-child(1) {
+    grid-template-columns: max-content 210px;
+    top: 0;
+    margin-left: 5rem;
+}
+
+.collection__data-men {
+    margin-top: 2.5rem;
+}
+
+.collection__data-women {
+    align-self: flex-end;
+    margin-bottom: 2.5rem;
+}
+
+@media screen and (max-width: 340px) {
+    .collection {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .collection__explore:nth-child(1),
+    .collection__explore:nth-child(2) {
+        position: initial;
+        grid-template-columns: 230px;
+        row-gap: 2rem;
+        margin: 0;
+    }
+
+    .collection__container {
+        height: initial;
+        row-gap: 3rem;
+    }
+
+    .collection__data-men {
+        margin-top: 0;
+    }
+
+    .collection__data-women {
+        margin-bottom: 0;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .collection__container {
+        height: 760px;
+        margin-bottom: 2rem;
+    }
+
+    .collection__explore {
+        column-gap: 5rem;
+    }
+
+    .collection__explore:nth-child(1) {
+        grid-template-columns: max-content 330px;
+        margin-left: 10rem;
+    }
+
+    .collection__explore:nth-child(2) {
+        grid-template-columns: 330px max-content;
+        margin-right: 10rem;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .collection__container {
+        height: 850px;
+        margin-bottom: 2rem;
+    }
+
+    .collection__explore {
+        column-gap: 5rem;
+    }
+
+    .collection__explore:nth-child(1) {
+        grid-template-columns: max-content 330px;
+        margin-left: 10rem;
+    }
+
+    .collection__explore:nth-child(2) {
+        grid-template-columns: 330px max-content;
+        margin-right: 10rem;
+    }
+}
