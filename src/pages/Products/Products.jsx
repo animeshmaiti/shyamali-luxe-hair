@@ -215,7 +215,7 @@ const Products = () => {
         observeParents={true}
       >
         {slides.map((s, idx) => (
-          <SwiperSlide key={idx}>
+          <SwiperSlide className='product-slide' key={idx}>
             <div
               className="content content--slide"
               ref={(el) => {

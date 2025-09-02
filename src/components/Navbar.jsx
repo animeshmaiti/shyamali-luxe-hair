@@ -100,7 +100,6 @@ const Navbar = () => {
                   }
                   end
                 >
-                  <i className="ri-home-line"></i>
                   <span>Home</span>
                 </NavLink>
               </li>
@@ -112,7 +111,6 @@ const Navbar = () => {
                   }
                   end
                 >
-                  <i className="ri-price-tag-3-line"></i>
                   <span>New</span>
                 </NavLink>
               </li>
@@ -124,7 +122,6 @@ const Navbar = () => {
                   }
                   end
                 >
-                  <i className="ri-compass-line"></i>
                   <span>Collection</span>
                 </NavLink>
               </li>
@@ -136,8 +133,18 @@ const Navbar = () => {
                   }
                   end
                 >
-                  <i className="ri-t-shirt-line"></i>
                   <span>Products</span>
+                </NavLink>
+              </li>
+              <li className="nav__item">
+                <NavLink
+                  to="/about"
+                  className={({ isActive }) =>
+                    `nav__link ${isActive ? 'nav__link--active' : ''}`
+                  }
+                  end
+                >
+                  <span>About Us</span>
                 </NavLink>
               </li>
             </ul>
@@ -229,6 +236,18 @@ const Navbar = () => {
             >
               <i className="ri-t-shirt-line"></i>
               <span>Products</span>
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/about"
+              className={({ isActive }) =>
+                `drawer__link ${isActive ? 'drawer__link--active' : ''}`
+              }
+              onClick={handleNavClick}
+            >
+              <i className="ri-information-line"></i>
+              <span>About Us</span>
             </NavLink>
           </li>
         </ul>
