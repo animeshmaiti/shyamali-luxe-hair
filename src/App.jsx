@@ -8,6 +8,7 @@ import Products from './pages/Products/Products';
 import PageNotFound from './pages/PageNotFound';
 import Footer from './components/footer/Footer';
 import About from './pages/about/About';
+import CollectionItem from './pages/collections/CollectionItem';
 
 function App() {
   return (
@@ -18,7 +19,8 @@ function App() {
           <Route index element={<Home />} />
           <Route path="/home" element={<Home />} />
           <Route path="/new" element={<New />} />
-          <Route path="/collection" element={<Collection />} />
+          <Route path="/collection" element={<Collection />}/>
+          <Route path="/collection/collections/:id" element={<CollectionItem />} />
           <Route path="/products" element={<Products />} />
           <Route path='/about' element={<About/>}/>
           <Route path="*" element={<PageNotFound />} />
