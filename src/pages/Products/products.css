@@ -138,7 +138,7 @@
 }
 
 .swiper-slide-prev,
-.product-slide .swiper-slide-active {
+.product-slide.swiper-slide-active {
   opacity: 0;
 }
 
