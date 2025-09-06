@@ -1,4 +1,4 @@
-import bgAbout from '@assets/product5.jpg';
+import bgAbout from '@assets/banner.jpg';
 import './about.css';
 import { Link } from 'react-router-dom';
 import { useRevealOnRoute } from '../../hook/useRevealOnRoute';

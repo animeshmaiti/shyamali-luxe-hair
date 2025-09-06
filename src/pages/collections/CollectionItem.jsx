@@ -2,8 +2,12 @@ import './collectionItem.css';
 import { useParams } from 'react-router-dom';
 import { curlyHairData } from './itemsData';
 import { straightHairData } from './itemsData';
+import { useRevealOnRoute } from '../../hook/useRevealOnRoute';
 
 const CollectionItem = () => {
+  useRevealOnRoute((sr) => {
+    sr.reveal('.item__card', { interval: 100 });
+  });
   const { id } = useParams();
   const itemsData = id == 1 ? curlyHairData : straightHairData;
   return (
