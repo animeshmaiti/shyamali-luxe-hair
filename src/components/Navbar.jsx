@@ -138,6 +138,17 @@ const Navbar = () => {
               </li>
               <li className="nav__item">
                 <NavLink
+                  to="/process"
+                  className={({ isActive }) =>
+                    `nav__link ${isActive ? 'nav__link--active' : ''}`
+                  }
+                  end
+                >
+                  <span>Processing</span>
+                </NavLink>
+              </li>
+              <li className="nav__item">
+                <NavLink
                   to="/about"
                   className={({ isActive }) =>
                     `nav__link ${isActive ? 'nav__link--active' : ''}`
@@ -236,6 +247,18 @@ const Navbar = () => {
             >
               <i className="ri-t-shirt-line"></i>
               <span>Products</span>
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/process"
+              className={({ isActive }) =>
+                `drawer__link ${isActive ? 'drawer__link--active' : ''}`
+              }
+              onClick={handleNavClick}
+            >
+              <i className="ri-t-shirt-line"></i>
+              <span>Processing</span>
             </NavLink>
           </li>
           <li>

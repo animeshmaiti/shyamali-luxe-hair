@@ -9,6 +9,7 @@ import PageNotFound from './pages/PageNotFound';
 import Footer from './components/footer/Footer';
 import About from './pages/about/About';
 import CollectionItem from './pages/collections/CollectionItem';
+import Process from './pages/process/Process';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route path="/collection" element={<Collection />}/>
           <Route path="/collection/collections/:id" element={<CollectionItem />} />
           <Route path="/products" element={<Products />} />
+          <Route path='/process' element={<Process/>}/>
           <Route path='/about' element={<About/>}/>
           <Route path="*" element={<PageNotFound />} />
         </Routes>
